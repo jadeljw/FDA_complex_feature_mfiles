@@ -17,15 +17,17 @@ listener_time_index =  (start_time+0)*Fs+1:(end_time+0)*Fs; % 10 s - 35s
 % listener_time_index = 1 : 1600;
 % load('E:\DataProcessing\afterICA_data\ISC_all_ref_after_ICA_64Hz_bandpass_2-8Hz.mat')
 % load('E:\DataProcessing\afterICA_data\ISC_all_ref_after_ICA_64Hz.mat')
-load('E:\DataProcessing\mTRF validation\EEG validation\data_average_ref_after_zscore_0-45s_cell.mat')
+% load('E:\DataProcessing\mTRF validation\EEG validation\data_average_ref_after_zscore_0-45s_cell.mat')
+load('E:\DataProcessing\mTRF validation\EEG validation\data_average_ref_200Hz_after_zscore_0-45s_cell.mat')
 % load('E:\DataProcessing\afterICA_data\ISC_all_ref_after_ICA_2-8Hz.mat')
 % load('E:\DataProcessing\afterICA_data\ISC_all_ref_after_ICA_64Hz_0.1-40Hz.mat')
 
 %% load speaker data
 % speaker_time_index =  (start_time+5)*Fs+1:(end_time+5)*Fs; % 10s - 35s
-speaker_time_index = 1 : 1600;
+speaker_time_index = 1 : (end_time-start_time)*Fs;
 % load('E:\DataProcessing\afterICA_data\data_speaker_64Hz.mat')
-load('E:\DataProcessing\mTRF validation\EEG validation\data_speaker_after_zscore_cell.mat')
+load('E:\DataProcessing\mTRF validation\EEG validation\data_speaker_after_zscore_200Hz_cell.mat')
+% load('E:\DataProcessing\mTRF validation\EEG validation\data_speaker_after_zscore_cell.mat')
 % load('E:\DataProcessing\afterICA_data\SoundResult_0s-35s_64Hz_hilbert_lowpass8Hz.mat')
 % load('E:\DataProcessing\afterICA_data\data_speaker_64Hz_bp_0.1-40Hz.mat')
 %% Channel Index
@@ -52,9 +54,9 @@ timelag = (-250:500/32:500)/(1000/Fs);
 
 p = pwd;
 
-for r = 2 : 10
+for r = 34 : 45
     %% band name
-        band_name = strcat(' 0.5Hz-40Hz after zscore10 64Hz r rank',num2str(r));
+        band_name = strcat(' 0.5Hz-40Hz after zscore10 200Hz r rank',num2str(r));
 %     band_name = strcat(' 0.1Hz-40Hz 64Hz');
   
     mkdir(band_name(2:end));
