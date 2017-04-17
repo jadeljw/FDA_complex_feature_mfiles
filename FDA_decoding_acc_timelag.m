@@ -10,7 +10,8 @@ timelag = (-250:500/32:500)/(1000/Fs);
 
 decoding_acc = zeros(1,length(timelag));
 Decoding_acc_ttest_result = zeros(1,length(timelag));
-band_name = ' broadband 0.5-40Hz after zscore';
+% band_name = ' broadband 0.5-40Hz after zscore';
+band_name = ' 0.5Hz-40Hz 64Hz r rank 1-10';
 
 
 %% CCA speaker-listener plot

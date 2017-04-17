@@ -18,10 +18,10 @@ load('E:\DataProcessing\ListenA_Or_Not.mat');
 
 p = pwd;
 
-for r = 2:10
+for r = 11:34
     %% load data
 %     band_name = ' 0.5Hz-40Hz 64Hz';
-      band_name = strcat(' 0.5Hz-40Hz central after zscore10 64Hz r rank',num2str(r));
+      band_name = strcat(' 0.5Hz-40Hz after zscore10 64Hz r rank',num2str(r));
       mkdir(band_name(2:end));
       cd(band_name(2:end));
     

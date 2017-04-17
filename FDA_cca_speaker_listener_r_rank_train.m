@@ -18,10 +18,10 @@ load('E:\DataProcessing\ListenA_Or_Not.mat');
 
 p = pwd;
 
-for r = 1:10
+for r = 11:34
     %% load data
     %     band_name = ' 0.5Hz-40Hz 64Hz';
-    band_name = strcat(' 0.5Hz-40Hz central after zscore10 64Hz r rank',num2str(r));
+    band_name = strcat(' 0.5Hz-40Hz after zscore10 64Hz r rank',num2str(r));
     mkdir(band_name(2:end));
     cd(band_name(2:end));
     
@@ -79,7 +79,7 @@ for r = 1:10
         hold on;
         plot(repmat(mean(decoding_acc_mean*100),[1 12]),'k--');
         title(plot_name(1:end-4));
-        xlabel('Subject No.'); ylabel('Decoding Accuarcy %');ylim([0,100]);
+        xlabel('Subject No.'); ylabel('Decoding Accuarcy %');ylim([60,100]);
         legend('Individual acc','Mean acc')
         saveas(gcf,plot_name);
         close
